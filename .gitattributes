@@ -1,0 +1,12 @@
+* text=auto, eol=lf
+
+# Text files
+*.xml text
+*.java text
+*.json text
+
+# Binary files
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.class binary
