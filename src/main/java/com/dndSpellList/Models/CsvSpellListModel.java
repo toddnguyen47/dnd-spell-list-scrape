@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CsvSpellListModel {
-  private class Row {
+  public class Row {
     private String spellName = "";
     private String level = "";
     
@@ -19,4 +19,9 @@ public class CsvSpellListModel {
   
   private List<Row> rows = new ArrayList<>();
   public List<Row> getRows() {return this.rows;}
+
+
+  public void addRow(String spellName, String level) {
+    this.rows.add(new Row(spellName, level));
+  }
 }
