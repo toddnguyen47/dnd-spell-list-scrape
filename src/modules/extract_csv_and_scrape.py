@@ -13,6 +13,7 @@ class ExtractCsvAndScrape:
             "Casting Time", "Range", "Components", "Duration",
             "Description", "Extra Info"
         ]
+        self.total_cols = 0
         self.scrape_modules = ScrapeModules(driver)
 
     def invoke(self):
@@ -49,6 +50,7 @@ class ExtractCsvAndScrape:
         line_list = line.split(",")
         for header in self.header_line:
             line_list.append(header)
+        self.total_cols = len(line_list)
         self.output_to_file(line_list)
 
     def handle_line(self, line):
@@ -65,6 +67,8 @@ class ExtractCsvAndScrape:
 
     def output_to_file(self, line_list):
         self.output_fp.seek(0, io.SEEK_END)
+        while len(line_list) < self.total_cols:
+            line_list.append("")
         self.output_fp.write(",".join(line_list).encode("utf-8"))
         self.output_fp.write("\n".encode("utf-8"))
         self.output_fp.flush()
