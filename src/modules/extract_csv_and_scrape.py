@@ -1,5 +1,5 @@
 import os
-from scrape_modules import ScrapeModules
+from scrape_module import ScrapeModules
 import time
 import io
 

@@ -91,7 +91,7 @@ class ScrapeModules:
             t = self.check_and_replace_colons(elem)
             text_list[index] = "\"" + t + "\""
 
-        return "\n".join(text_list)
+        return ",".join(text_list)
 
     def check_and_replace_colons(self, text):
         if ":" not in text:

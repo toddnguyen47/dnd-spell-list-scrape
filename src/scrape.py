@@ -1,4 +1,4 @@
-from modules.scrape_modules import ScrapeModules
+from modules.scrape_module import ScrapeModules
 from modules.extract_csv_and_scrape import ExtractCsvAndScrape
 from selenium import webdriver
 
