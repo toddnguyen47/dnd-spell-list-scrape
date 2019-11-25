@@ -73,25 +73,23 @@ class ScrapeModules:
     def extract_secondary_info_elem_found(self, elems):
         for index, e in enumerate(elems):
             if 0 < index < 4:
-                text = self.handle_secondary_info_text_format(e.text.strip(), index)
-                self.spell_description_list.append(text)
+                self.handle_secondary_info_text_format(e.text.strip(), index)
         self.check_for_higher_level()
 
     def handle_secondary_info_text_format(self, text: str, index: int) -> str:
         if text != "":
             if index == self.secondary_index_description:
                 text = "\"" + text.replace("\n", " ").replace("<br>", " ") + "\""
+                self.spell_description_list.append(text)
             else:
-                text = self.separate_secondary_info(text)
-        return text
+                self.separate_secondary_info(text)
 
     def separate_secondary_info(self, text):
         text_list = text.split("\n")
         for index, elem in enumerate(text_list):
             t = self.check_and_replace_colons(elem)
-            text_list[index] = "\"" + t + "\""
-
-        return ",".join(text_list)
+            if t.strip() != "":
+                self.spell_description_list.append("\"" + t + "\"")
 
     def check_and_replace_colons(self, text):
         if ":" not in text:

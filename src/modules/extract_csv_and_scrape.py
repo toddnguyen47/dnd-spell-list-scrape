@@ -2,6 +2,7 @@ import os
 from scrape_module import ScrapeModules
 import time
 import io
+import utils
 
 
 class ExtractCsvAndScrape:
@@ -56,7 +57,7 @@ class ExtractCsvAndScrape:
     def handle_line(self, line):
         cur_line_list = line.split(",")
         spell = cur_line_list[0].strip()
-        print("Getting info for spell: " + spell)
+        print("[{0}] Getting info for spell: {1}".format(utils.get_timestamp(), spell))
         info_list = self.scrape_modules.get_spell_info(spell)
         self.output_only_if_info_was_extracted(cur_line_list, info_list)
 
