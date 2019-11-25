@@ -4,6 +4,8 @@
 *.xml text
 *.java text
 *.json text
+*.py text
+*.log text
 
 # Binary files
 *.jpeg binary
