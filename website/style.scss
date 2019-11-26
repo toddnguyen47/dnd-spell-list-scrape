@@ -88,6 +88,12 @@ ul.nav-bar {
     background-color: lightgray;
   }
 
+  & tr {
+    &:hover {
+      background-color: $colorPrimaryLighter;
+    }
+  }
+
   &__spell-name {
     &--1 {
       width: 25%;

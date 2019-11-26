@@ -61,6 +61,8 @@ ul.nav-bar {
     background-color: #8949e2; }
   .table tr:nth-child(odd) {
     background-color: lightgray; }
+  .table tr:hover {
+    background-color: #ad8ddb; }
   .table__spell-name--1 {
     width: 25%; }
   .table__spell-name--2 {
