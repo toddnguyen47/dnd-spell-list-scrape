@@ -5,6 +5,7 @@ $colorPrimaryLighter: rgb(173, 141, 219);
 $colorSecondary: #03dac5;
 $colorSecondaryLight: rgb(81, 199, 187);
 $defaultTablePadding: 1rem 2rem;
+$defaultFontSize: 1.6rem;
 
 /* Basic Reset */
 *,
@@ -28,7 +29,7 @@ body {
   /* Borders and padding are no longer added to the height and width of an elem */
   box-sizing: border-box;
   font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.6rem;
+  font-size: $defaultFontSize;
 
   width: 114rem;
   margin: 0 auto;
@@ -155,12 +156,12 @@ ul.nav-bar {
     position: relative;
     cursor: pointer;
 
-    &__spell-description {
+    & .spell-description {
       cursor: text;
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(27rem, -1.1rem);
+      transform: translateX(29rem);
       background-color: $colorSecondary;
       border: 0.1rem solid black;
       text-align: left;
@@ -168,6 +169,13 @@ ul.nav-bar {
       display: none;
       z-index: 10;
       width: 50rem;
+
+      & .spell-description__name {
+        border-bottom: 0.3rem double black;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        font-size: calc(#{$defaultFontSize} * 1.1);
+      }
     }
   }
 }

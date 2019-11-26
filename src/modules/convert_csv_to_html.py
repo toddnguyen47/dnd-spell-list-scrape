@@ -1,13 +1,12 @@
 import csv
 from lxml import etree
-import os
 
 
 class ConvertCsvToHtml:
     def __init__(self, filepath):
         self.filepath = filepath
         self.index_spell_description = 0
-        self.root = etree.Element("div")
+        self.root = etree.Element("tbody")
         self.table_row = ""
         self.spell_name = ""
         self.spell_description_list = []
@@ -42,19 +41,30 @@ class ConvertCsvToHtml:
             self.spell_description_list.append(elem.strip())
 
     def add_spell_name_and_desc(self):
-        div_spellname = self.add_spell_name()
-        self.add_spell_description(div_spellname)
+        table_data = self.add_spell_name()
+        div_spell_desc = etree.SubElement(table_data, "div")
+        div_spell_desc.set("class", "spell-description")
+        self.add_spell_description(div_spell_desc)
 
     def add_spell_name(self):
         table_data = etree.SubElement(self.table_row, "td")
-        div_spellname = etree.SubElement(table_data, "div")
-        div_spellname.set("class", "table__td-spell-name")
-        div_spellname.text = self.spell_name.strip()
-        return div_spellname
+        table_data.set("class", "table__td-spell-name")
+        spell_span = etree.SubElement(table_data, "span")
+        spell_span.text = self.spell_name.strip()
+        return table_data
 
     def add_spell_description(self, parent_elem):
+        self.add_spell_description_name(parent_elem)
+        self.add_spell_description_description(parent_elem)
+
+    def add_spell_description_name(self, parent_elem):
+        div_spell_desc_name = etree.SubElement(parent_elem, "div")
+        div_spell_desc_name.set("class", "spell-description__name")
+        div_spell_desc_name.text = self.spell_name.strip()
+
+    def add_spell_description_description(self, parent_elem):
         div_spell_desc = etree.SubElement(parent_elem, "div")
-        div_spell_desc.set("class", "table__td-spell-name__spell-description")
+        div_spell_desc.set("class", "spell-description__description")
         for sd in self.spell_description_list:
             if sd.strip():
                 p1 = etree.SubElement(div_spell_desc, "p")

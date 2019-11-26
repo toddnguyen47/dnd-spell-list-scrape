@@ -13,7 +13,7 @@ function ShowSpellDescription() {
 
   this.hideElem = function(selector) {
     selector
-      .find("div[class*='__spell-description'")
+      .find("div[class*='spell-description'")
       .eq(0)
       .hide();
   };
@@ -25,7 +25,7 @@ function ShowSpellDescription() {
   };
 
   this.toggleElem = function(selector) {
-    let e = selector.find("div[class*='__spell-description'").eq(0);
+    let e = selector.find("div[class*='spell-description'").eq(0);
     e.toggle();
     this.copyToClipboard(e);
   };

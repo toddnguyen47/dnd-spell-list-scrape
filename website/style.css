@@ -94,12 +94,12 @@ ul.nav-bar {
   .table__td-spell-name {
     position: relative;
     cursor: pointer; }
-    .table__td-spell-name__spell-description {
+    .table__td-spell-name .spell-description {
       cursor: text;
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(27rem, -1.1rem);
+      transform: translateX(29rem);
       background-color: #03dac5;
       border: 0.1rem solid black;
       text-align: left;
@@ -107,3 +107,8 @@ ul.nav-bar {
       display: none;
       z-index: 10;
       width: 50rem; }
+      .table__td-spell-name .spell-description .spell-description__name {
+        border-bottom: 0.3rem double black;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        font-size: calc(1.6rem * 1.1); }

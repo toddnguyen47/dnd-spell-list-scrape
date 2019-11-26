@@ -3,5 +3,5 @@ import os
 
 if __name__ == "__main__":
     convertObj = ConvertCsvToHtml(os.path.join(
-        os.getcwd(), "outputs", "lostMinesStarterWizardSpellListDesc.csv"))
+        os.getcwd(), "outputs", "clericSpellListDomainDesc.csv"))
     convertObj.invoke()
