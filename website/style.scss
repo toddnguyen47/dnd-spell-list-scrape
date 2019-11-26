@@ -1,0 +1,167 @@
+$totalNumColumns: 6;
+$colorPrimary: #6200ee;
+$colorPrimaryLight: rgb(137, 73, 226);
+$colorPrimaryLighter: rgb(173, 141, 219);
+$colorSecondary: #03dac5;
+$colorSecondaryLight: rgb(81, 199, 187);
+$defaultTablePadding: 1rem 2rem;
+
+/* Basic Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Defines what 1rem is
+  /* Browser default is 16px. (10px / 16px) = 62.5% */
+  font-size: 62.5%;
+}
+
+/* Font using INHERITANCE 
+ * Font-family will get inherited by all elements in the body
+ */
+body {
+  /* Borders and padding are no longer added to the height and width of an elem */
+  box-sizing: border-box;
+  font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.6rem;
+
+  width: 114rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+ul.nav-bar {
+  padding-bottom: 5rem;
+  & li {
+    list-style-type: none;
+    display: inline-block;
+    overflow: wrap;
+    width: 15rem;
+    vertical-align: top;
+
+    & a {
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $colorPrimaryLighter;
+      }
+    }
+  }
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem;
+}
+.u-margin-bottom-med {
+  margin-bottom: 6rem;
+}
+
+.table-of-content {
+  font-size: 2rem;
+}
+
+.table,
+.table td,
+.table th {
+  border: 0.1rem solid black;
+  text-align: center;
+  padding: $defaultTablePadding;
+}
+
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+
+  & th {
+    background-color: $colorPrimaryLight;
+  }
+
+  & tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+
+  &__spell-name {
+    &--1 {
+      width: 25%;
+    }
+    &--2 {
+      width: 25%;
+    }
+  }
+  &__domain {
+    &--1 {
+      width: 0%;
+    }
+    &--2 {
+      width: 15%;
+    }
+  }
+  &__level {
+    &--1 {
+      width: 10%;
+    }
+    &--2 {
+      width: 10%;
+    }
+  }
+  &__casting-time {
+    &--1 {
+      width: 10%;
+    }
+    &--2 {
+      width: 10%;
+    }
+  }
+  &__range {
+    &--1 {
+      width: 15%;
+    }
+    &--2 {
+      width: 10%;
+    }
+  }
+  &__components {
+    &--1 {
+      width: 20%;
+    }
+    &--2 {
+      width: 20%;
+    }
+  }
+  &__duration {
+    &--1 {
+      width: 20%;
+    }
+    &--2 {
+      width: 20%;
+    }
+  }
+
+  &__td-spell-name {
+    position: relative;
+    cursor: pointer;
+
+    &__spell-description {
+      cursor: text;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(27rem);
+      background-color: rgba($colorSecondary, 0.9);
+      border: 0.1rem solid black;
+      text-align: left;
+      padding: 1rem 3rem;
+      display: none;
+      z-index: 10;
+      width: 50rem;
+    }
+  }
+}

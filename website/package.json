@@ -1,0 +1,17 @@
+{
+  "name": "dnd_5e_spells",
+  "version": "1.0.0",
+  "description": "Dungeons & Dragons 5E Spell Descriptions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass style.scss style.css -w",
+    "dev:live-server": "live-server --port=5500 --no-browser"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.0"
+  }
+}

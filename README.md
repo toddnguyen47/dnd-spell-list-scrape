@@ -1,2 +1,2 @@
 # dndSpellListScrape
-Dungeon &amp; Dragons Spell Scraper using Java &amp; Selenium
+Dungeon &amp; Dragons Spell Scraper using Python &amp; Selenium
